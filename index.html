@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test Driller</title>
+  <link rel="icon" href="img/logo.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- HOME BOX -->
+  <div class="home-box custom-box">
+    <h3>Instructions</h3>
+    <p>Total number of questions: <span class="total-question-home"></span></p>
+    <p>Time allowed: <span class="quiz-time-home"></span></p>
+    <p>You can attempt the quiz multiple times</p>
+    <p>Each question carries one point. No negative marking for wrong answers</p>
+    <p>Questions are of Multiple Choice, with one or more possible correct answers. Select all that apply!</p>
+
+    <!-- Topic Selection (Will be disabled if custom questions are loaded) -->
+    <div id="topic-select-container">
+        <label for="topic">Choose Topic:</label>
+        <select name="topic" id="topic">
+          <option value="all">All Topics</option>
+          <option value="sports">Sports</option>
+          <option value="logic">Logic</option>
+          <option value="gk">GK</option>
+          <option value="computer">Computer</option>
+          <option value="math">Math (Multi-answer example)</option>
+        </select>
+         <span id="topic-note" style="font-size: 0.8em; color: #555;">(Applies to built-in questions)</span>
+    </div>
+    <br />
+
+    <!-- Custom Timer Input -->
+    <label for="custom-time-minutes">Custom Time (minutes):</label>
+    <input type="number" id="custom-time-minutes" min="1" value="10" style="width: 60px; padding: 5px; margin-left: 5px;">
+    <br /><br />
+
+    <!-- Custom Question Upload -->
+    <div class="custom-upload-section">
+        <h4>Load Your Own Questions (JSON format)</h4>
+        <p style="font-size: 0.9em; color: #555;">Upload a .json file containing an array of question objects. Each object needs `q` (string), `options` (array of strings), and `answer` (array of original option indices).</p>
+        <input type="file" id="question-file-input" accept=".json">
+         <p id="upload-status" style="font-size: 0.9em; margin-top: 5px;"></p>
+    </div>
+    <br />
+
+
+    <div class="shuffle-buttons"> <!-- Container for shuffle buttons -->
+        <button type="button" class="btn" onclick="toggleShuffleQuestions(this)">Shuffle Questions</button>
+        <button type="button" class="btn" onclick="toggleShuffleAnswers(this)">Shuffle Answers</button>
+    </div>
+    <br /> <!-- Add some space -->
+    <button type="button" class="btn" onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- QUIZ BOX -->
+  <div class="quiz-box custom-box hide">
+    <div class="timer-display"></div> <!-- Timer added here -->
+    <div class="question-number"></div>
+    <div class="question-text"></div>
+    <div class="option-container"></div>
+
+    <div class="submit-button-container">
+      <button type="button" class="btn submit-answer-btn" onclick="submitAnswer()">Submit</button>
+    </div>
+
+    <div class="navigation-btns">
+      <button type="button" class="btn prev-btn" onclick="prev()">Previous</button>
+      <button type="button" class="btn next-btn" onclick="next()">Next</button>
+      <button type="button" class="btn exit-btn" onclick="quizOver()">Quit</button>
+    </div>
+
+    <div class="answers-indicator"></div>
+  </div>
+
+  <!-- RESULT BOX -->
+  <div class="result-box custom-box hide">
+    <h1>Result</h1>
+    <table>
+      <tr>
+        <td>Total Questions</td>
+        <td><span class="total-question-result"></span></td>
+      </tr>
+      <tr>
+        <td>Attempted</td>
+        <td><span class="total-attempt"></span></td>
+      </tr>
+      <tr>
+        <td>Correct</td>
+        <td><span class="total-correct"></span></td>
+      </tr>
+      <tr>
+        <td>Wrong</td>
+        <td><span class="total-wrong"></span></td>
+      </tr>
+      <tr>
+        <td>Percentage</td>
+        <td><span class="percentage"></span></td>
+      </tr>
+      <tr>
+        <td>Your Total Score</td>
+        <td><span class="total-score"></span></td>
+      </tr>
+    </table>
+
+    <div class="review-container"></div>
+
+    <button type="button" class="btn try-again-btn" onclick="tryAgain()">Try Again</button>
+    <button type="button" class="btn go-home-btn" onclick="goToHome()">Go To Home</button>
+  </div>
+
+  <script src="quizData.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
