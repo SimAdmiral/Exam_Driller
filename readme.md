@@ -2,6 +2,9 @@
 
 This is a simple responsive web-based quiz application built using HTML, CSS, and JavaScript. Users can select topics, answer multiple-choice questions, and view their results with detailed answer reviews.
 
+**Try the live demo here:**  
+[https://simadmiral.github.io/Exam_Driller/](https://simadmiral.github.io/Exam_Driller/)
+
 ## Screenshots
 <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
 
