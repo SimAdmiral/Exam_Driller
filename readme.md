@@ -2,8 +2,23 @@
 
 This is a simple responsive web-based quiz application built using HTML, CSS, and JavaScript. Users can select topics, answer multiple-choice questions, and view their results with detailed answer reviews.
 
-**Try the live demo here:**  
-[https://simadmiral.github.io/Exam_Driller/](https://simadmiral.github.io/Exam_Driller/)
+<!-- DEMO BUTTON -->
+<p align="center">
+  <a href="https://simadmiral.github.io/Exam_Driller/" target="_blank" style="
+    display: inline-block;
+    background-color: #2196f3;
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.4);
+    transition: background-color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#1769aa'" onmouseout="this.style.backgroundColor='#2196f3'">
+    ▶️ Live Demo
+  </a>
+</p>
 
 ## Screenshots
 <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
